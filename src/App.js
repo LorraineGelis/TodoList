@@ -1,12 +1,12 @@
-import React from 'react';
-/* import logo from './logo.svg';
-import './App.css'; */
+import React from "react";
+import {ListComponents} from './Components/ListComponent.jsx';
+
 
 function App() {
+  
+
   return (
-    <div>
-      <h1>Hola, Probando</h1>
-    </div>
+    <div>{<ListComponents></ListComponents>}</div>
   );
 }
 
