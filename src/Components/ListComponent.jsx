@@ -1,18 +1,18 @@
 
 import React from 'react';
+import { TaskRow } from './TaskRow.jsx';
 
 
 
-export const ListComponents = (props) => {
-    
-    console.log(props.task, "Algo aqui")
+export const ListComponents = ({task, toggleTask}) => {
+  
  
-   /* const taskTableRows = () => {
-     return taskItem.map((task) => (
-          <TaskRow task={task.name} />
+    const taskTableRows = () => {
+     return task.map((tasks) => (
+          <TaskRow task={tasks} key={tasks.name} toggleTask={toggleTask} />
       ))
   
-  }  */
+  }  
   return(
   
       <div>
@@ -24,7 +24,7 @@ export const ListComponents = (props) => {
             <th>Done</th>
           </tr>
         </thead>
-        <tbody>{}</tbody>
+        <tbody>{taskTableRows()}</tbody>
       </table>
     </div>
   )

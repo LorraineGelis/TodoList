@@ -12,10 +12,15 @@ const ListContainer = () => {
         { name: "task three", done: true },
         { name: "task four", done: false },
       ]);
+
+       const toggleTask = task => {
+         //console.log("funciono")
+         setTaskItems(taskItems.map(e => (e.name === task.name ? {...e, done: !e.done} : e))) 
+       }
+        
       
-      return <ListComponents task= {taskItems}/>
-
-
+      
+      return <ListComponents task= {taskItems} toggleTask={toggleTask} />
 }
 
 export default ListContainer;
