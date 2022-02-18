@@ -5,6 +5,7 @@ import {ListComponents} from './ListComponent.jsx';
 const ListContainer = () => {
 
     
+    const [userName, SetUserName] = useState('Lore')
     const [taskItems, setTaskItems] = useState([
 
         { name: "task One", done: false },
@@ -14,13 +15,13 @@ const ListContainer = () => {
       ]);
 
        const toggleTask = task => {
-         //console.log("funciono")
+         //console.log("funciono yuju")
          setTaskItems(taskItems.map(e => (e.name === task.name ? {...e, done: !e.done} : e))) 
        }
         
       
       
-      return <ListComponents task= {taskItems} toggleTask={toggleTask} />
+      return <ListComponents task= {taskItems} toggleTask={toggleTask} userName={userName} />
 }
 
 export default ListContainer;

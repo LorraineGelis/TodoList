@@ -1,10 +1,11 @@
 
 import React from 'react';
 import { TaskRow } from './TaskRow.jsx';
+import  {PendingTask} from './PendingTask.jsx';
 
 
 
-export const ListComponents = ({task, toggleTask}) => {
+export const ListComponents = ({task, toggleTask, userName}) => {
   
  
     const taskTableRows = () => {
@@ -14,10 +15,10 @@ export const ListComponents = ({task, toggleTask}) => {
   
   }  
   return(
-  
+      
       <div>
-      <h1>Hola</h1>
-      <table>
+      <PendingTask userName={userName} task={task}></PendingTask>
+      <table className="table table-striped table-bordered">
         <thead>
           <tr>
             <th>Description</th>
