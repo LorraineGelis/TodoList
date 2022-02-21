@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import swal from 'sweetalert';
 
 export const TaskCreator = (props) => {
 
@@ -20,9 +21,17 @@ export const TaskCreator = (props) => {
              className='form-control'
              value={newTask}
              onChange={updateNewTask}
+             
               />
-              <button className='btn btn-primary mt-1' onClick={createNewTask}>
-                  add
+              <button className='btn btn-primary mt-1' onClick={() => {
+                  if(!newTask.trim()){
+                    swal("ups,", "Por favor ingresa una tarea", "error");
+                  } else{
+                    createNewTask()
+                  } 
+                }}
+              >
+                add
               </button>
         </div>
     )

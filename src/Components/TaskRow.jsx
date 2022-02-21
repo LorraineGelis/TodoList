@@ -1,14 +1,9 @@
  import React from 'react';
-
+ import './../App.css';
 
 export const TaskRow = (props) => {
 
-    
-  /*   const setCheked = (value) => {
-    props.toggleTask(value)
-    } */
-
-    return <tr key={props.task.name}>
+    return <tr key={props.task.name} className={props.task.done ? 'Is-done' : 'Is-undone'}>
           <td>{props.task.name}</td>
           <td>
               <input 
