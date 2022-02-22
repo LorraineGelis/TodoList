@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ListComponents } from "./ListComponent.jsx";
 
 const ListContainer = () => {
-  const [userName, SetUserName] = useState("Lore");
+  const [userName, SetUserName] = useState("Welcome");
   const [taskItems, setTaskItems] = useState([]);
 
   useEffect(() => {
@@ -11,7 +11,7 @@ const ListContainer = () => {
     if (dataTask != null) {
       setTaskItems(JSON.parse(dataTask));
     } else {
-      SetUserName("LoreG");
+      SetUserName("Lore");
     }
   }, []);
 

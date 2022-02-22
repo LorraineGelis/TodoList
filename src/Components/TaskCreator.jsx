@@ -33,10 +33,7 @@ export const TaskCreator = (props) => {
           placeholder="Add a task"
           autoFocus
         />
-        <button
-          className="btn btn-primary border border-white todo-button"
-          type='submit'
-        >
+        <button className="btn btn-primary border border-white todo-button" type="submit">
           Add
         </button>
       </form>
