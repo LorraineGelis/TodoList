@@ -17,7 +17,7 @@ export const TaskCreator = (props) => {
     e.preventDefault();
 
     if (!newTask.trim()) {
-      swal("ups,", "Por favor ingresa una tarea", "error");
+      swal("ups,", "Please enter a task", "error");
     } else {
       createNewTask();
     }
