@@ -11,7 +11,9 @@ function App() {
   return (
    <Router>
      <Switch>
-       <Route exact path="/" component={ListContainer} />
+       <>
+        <Route exact path="/" component={ListContainer} />
+       </>
      </Switch>
    </Router>
   );

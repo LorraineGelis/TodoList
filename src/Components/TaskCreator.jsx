@@ -1,38 +1,45 @@
-import React, {useState} from 'react';
-import swal from 'sweetalert';
+import React, { useState } from "react";
+import swal from "sweetalert";
 
 export const TaskCreator = (props) => {
+  const [newTask, setNewTask] = useState("");
 
+  const updateNewTask = (e) => {
+    setNewTask(e.target.value);
+  };
 
-    const [newTask, setNewTask] = useState("");
+  const createNewTask = () => {
+    props.createNewTask(newTask);
+    setNewTask("");
+  };
 
-    const updateNewTask  = (e) => {
-        setNewTask(e.target.value);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!newTask.trim()) {
+      swal("ups,", "Por favor ingresa una tarea", "error");
+    } else {
+      createNewTask();
     }
-
-    const createNewTask = () => {
-        props.createNewTask(newTask)
-        setNewTask("");
-    }
-    return(
-        <div className='my-1'>
-            <input
-             type="text"
-             className='form-control'
-             value={newTask}
-             onChange={updateNewTask}
-             
-              />
-              <button className='btn btn-primary mt-1' onClick={() => {
-                  if(!newTask.trim()){
-                    swal("ups,", "Por favor ingresa una tarea", "error");
-                  } else{
-                    createNewTask()
-                  } 
-                }}
-              >
-                add
-              </button>
-        </div>
-    )
-}
+  };
+  return (
+    <div className="my-1">
+      <form className="input-group mb-3" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          className="form-control bg-dark text-white"
+          value={newTask}
+          onChange={updateNewTask}
+          placeholder="Add a task"
+          autoFocus
+        />
+        <button
+          className="btn btn-primary border border-white todo-button"
+          type='submit'
+        >
+          Add
+        </button>
+      </form>
+    </div>
+  );
+};

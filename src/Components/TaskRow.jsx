@@ -3,14 +3,11 @@
 
 export const TaskRow = (props) => {
 
-    return <tr key={props.task.name} className={props.task.done ? 'Is-done' : 'Is-undone'}>
-          <td>{props.task.name}</td>
-          <td>
-              <input 
-              type="checkbox" 
-              checked={props.task.done}
-              onChange={() => props.toggleTask(props.task)}
-              /> 
-          </td>
-        </tr>
+  return (
+  <li className={"list-group-item d-flex justify-content-between align-items-center text-break text-white todo-row " + (props.task.done ? 'Is-done' : 'Is-undone')}>
+    {props.task.name}
+    <input className={"form-check-input me-1 ms-2"} type="checkbox" value="" aria-label="..." checked={props.task.done}
+              onChange={() => props.toggleTask(props.task)}/>
+  </li>
+  )
 } 
